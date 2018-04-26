@@ -37,17 +37,17 @@
             maxlength="25" />
             <br></br>
                
-            <h:outputLabel for="Id_departamento" value="Selecione o departamento"/>
-            <h:selectOneMenu 
-                id="Id_departamento"
-                value="#{FuncionarioBeam.id_departamento}"
-                required="true">
+            <h:outputLabel for="id_departamento" value="Selecione o departamento"/>
+            <h:selectOneMenu
+                id="id_departamento" required="false"
+                >
                <f:selectItems 
                    value="#{DepartamentoBeam.lista_departamentos}"
                    var="item" 
                    itemLabel="#{item.nome}" 
                    itemValue="#{item.id}"/>  
-            </h:selectOneMenu>
+
+           </h:selectOneMenu>
             
 
             <h:commandButton id="submit" value="Submit" action="addFuncionario"></h:commandButton>
@@ -58,7 +58,6 @@
             <p>id: #{item.id}</p>
             <p>nome: #{item.nome}</p>
             <p>salário: #{item.salario}</p>
-            <p>departamento: #{item.id_departamento}</p>
             <br/>
         </ui:repeat>
 

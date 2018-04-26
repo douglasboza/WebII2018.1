@@ -32,11 +32,11 @@ public class Funcionario {
         this.salario = salario;
     }
 
-    public int getId_departamento() {
+    public int getLotacao() {
         return id_departamento;
     }
 
-    public void setId_departamento(int id_departamento) {
+    public void setLotacao(int id_departamento) {
         this.id_departamento = id_departamento;
     }
 

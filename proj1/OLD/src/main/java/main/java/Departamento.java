@@ -9,13 +9,11 @@ package main.java;
  *
  * @author douglasboza
  */
-public class Funcionario {
-    
-    public String nome;
-    public double salario;
-    public int id_departamento;
+public class Departamento {
+    String nome;
+    Chefe chefe;
     int id;
-    
+
     public String getNome() {
         return nome;
     }
@@ -24,20 +22,12 @@ public class Funcionario {
         this.nome = nome;
     }
 
-    public double getSalario() {
-        return salario;
+    public Chefe getChefe() {
+        return chefe;
     }
 
-    public void setSalario(double salario) {
-        this.salario = salario;
-    }
-
-    public int getId_departamento() {
-        return id_departamento;
-    }
-
-    public void setId_departamento(int id_departamento) {
-        this.id_departamento = id_departamento;
+    public void setChefe(Chefe chefe) {
+        this.chefe = chefe;
     }
 
     public int getId() {
@@ -48,6 +38,4 @@ public class Funcionario {
         this.id = id;
     }
     
-    
-    
-}   
+}
