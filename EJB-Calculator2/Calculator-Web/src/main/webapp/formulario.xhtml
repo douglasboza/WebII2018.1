@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>Testing Calculator Bean from JSF</h:head> 
+
+#{calculatorManagedBean}
+
+<body> 
+	<h:form>
+	<h:panelGrid border="1" columns="2">
+                <h:outputText value="Primeiro numero"></h:outputText>
+                <h:inputText id="numero1" value="#{calculatorManagedBean.numero1}" />
+                <h:outputText value="Segundo numero"></h:outputText>
+                <h:inputText id="numero2" value="#{calculatorManagedBean.numero2}"/>
+	</h:panelGrid>
+            <h:commandButton value="Soma" action="#{calculatorManagedBean.calcula}"/>
+            <h:commandButton value="Subtração" action="#{calculatorManagedBean.subtracao}"/>
+            <h:commandButton value="Divisao" action="#{calculatorManagedBean.divisao}"/>
+            <h:commandButton value="Multiplicacao" action="#{calculatorManagedBean.multiplicacao}"/>
+	</h:form>
+</body> 
+</html>
