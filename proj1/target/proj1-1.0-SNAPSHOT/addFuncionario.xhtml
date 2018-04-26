@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    
+#{FuncionarioBeam}
+
+    <h:head>
+        <title>Cadastro de funcionários</title>
+    </h:head>
+    <h:body>
+        <br/><br/>
+        <a href="addFuncionario.xhtml">Funcionários</a>
+        <a href="addDepartamento.xhtml">Departamentos</a>
+        <a href="addChefe.xhtml">Chefes</a>
+        <br/><br/>
+        
+        <h1>Funcionários cadastrados:</h1>
+        
+        <h:form>
+            <p>Cadastro e edição de funcionários</p>  
+            <h:outputLabel for="nome" value="Nome"/>
+            <h:inputText id="nome" title="My name is: "
+            required="true"
+            value="#{FuncionarioBeam.nome}"
+            requiredMessage="Error: A name is required."
+            maxlength="25" />
+            <br></br>
+            <h:outputLabel for="salario" value="Salário"/>
+            <h:inputText id="salario" 
+            required="true"
+            value="#{FuncionarioBeam.salario}"
+            requiredMessage="Erro: Digite o salário."
+            maxlength="25" />
+            <br></br>
+               
+            <h:outputLabel for="id_departamento" value="Selecione o departamento"/>
+            <h:selectOneMenu
+                id="id_departamento" required="false"
+                value="#{DepartamentoBeam.lista_departamentos}">
+               <f:selectItems 
+                   value="#{DepartamentoBeam.lista_departamentos}"
+                   var="item" 
+                   itemLabel="#{item.nome}" 
+                   itemValue="#{item.id}"/>  
+
+           </h:selectOneMenu>
+            
+
+            <h:commandButton id="submit" value="Submit" action="addFuncionario"></h:commandButton>
+            <h:commandButton id="reset" value="Reset" type="reset"></h:commandButton>
+        </h:form>
+        
+        <ui:repeat value="#{FuncionarioBeam.lista_funcionarios}" var="item">
+            <p>id: #{item.id}</p>
+            <p>nome: #{item.nome}</p>
+            <p>salário: #{item.salario}</p>
+            <br/>
+        </ui:repeat>
+
+        
+
+        
+        
+    <br/>
+    </h:body>
+</html>
