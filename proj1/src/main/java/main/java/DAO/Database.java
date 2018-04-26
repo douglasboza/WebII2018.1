@@ -12,7 +12,7 @@ import main.java.Departamento;
 import main.java.Funcionario;
 
 /**
- *
+ *q
  * @author douglasboza
  */
 public class Database {
