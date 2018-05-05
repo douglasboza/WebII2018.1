@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <head>
+        <title>Encriptação</title>
+    </head>
+    <body>
+        
+        
+         <h:form>
+            <h:outputLabel for="nome" value="Nome"/>
+            <h:inputText id="nome" title="My name is: "
+            required="true"
+            value="#{FuncionarioBeam.nome}"
+            requiredMessage="Error: A name is required."
+            maxlength="25" />
+            <br></br>
+            <h:outputLabel for="salario" value="Salário"/>
+            <h:inputText id="salario" 
+            required="true"
+            value="#{FuncionarioBeam.salario}"
+            requiredMessage="Erro: Digite o salário."
+            maxlength="25" />
+            <br></br>
+               
+            <h:outputLabel for="Id_departamento" value="Selecione o departamento"/>
+            
+
+            <h:commandButton id="submit" value="Submit" action="addFuncionario"></h:commandButton>
+            <h:commandButton id="reset" value="Reset" type="reset"></h:commandButton>
+        </h:form>
+        
+    </body>
+</html>
+

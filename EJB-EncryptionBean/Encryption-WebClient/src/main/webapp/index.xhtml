@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <p>Encriptar ou criar hash</p>
+        <h:form>
+            <h:outputLabel for="texto" value=""/>
+            <h:inputText id="texto" title="Texto: "
+            required="true"
+            value="#{EncriptarBean.texto}"
+            requiredMessage="Error: A text is required."/>
+            <br></br>
+           
+
+            <h:commandButton id="encriptar" value="Encriptar" action="#{EncriptarBean.setEncrypt}"></h:commandButton>
+            <h:commandButton id="hash" value="Criar hash" action="#{EncriptarBean.setHash}"></h:commandButton>
+        </h:form>
+        
+        <p>Encriptação: #{EncriptarBean.texto} => #{EncriptarBean.texto_encrypted}</p>
+        <p>Hash: #{EncriptarBean.texto} => #{EncriptarBean.texto_hash}</p>
+        <br></br>
+        <p>Comparar texto</p>
+        <h:form>
+            <h:outputLabel for="texto" value="Texto"/>
+            <h:inputText id="texto_comp" title="Texto: "
+            required="true"
+            value="#{EncriptarBean.texto_comp}"
+            requiredMessage="Error: A text is required."/>
+            <br></br>
+            <h:outputLabel for="texto" value="Texto em hash"/>
+            <h:inputText id="texto_hash" title="Texto: "
+            value="#{EncriptarBean.texto_hash}"
+            requiredMessage="Error: A text is required."/>
+            <br></br>
+            <h:outputLabel for="texto" value="Texto encriptado"/>
+            <h:inputText id="texto_encrypted" title="Texto: "
+            value="#{EncriptarBean.texto_encrypted}"
+            requiredMessage="Error: A text is required."/>
+            <br></br>
+
+            <h:commandButton id="comp_hash" value="Comparar" action="#{EncriptarBean.comparar}"></h:commandButton>
+        </h:form>
+             <p>#{EncriptarBean.resultado}</p>
+           
+            
+    </body>
+</html>
