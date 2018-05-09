@@ -9,11 +9,14 @@ package main.java;
  *
  * @author douglasboza
  */
+
 public class Departamento {
     String nome;
-    Chefe chefe;
+    int id_chefe;
     int id;
-
+    
+    
+    
     public String getNome() {
         return nome;
     }
@@ -22,12 +25,12 @@ public class Departamento {
         this.nome = nome;
     }
 
-    public Chefe getChefe() {
-        return chefe;
+    public int getChefe() {
+        return id_chefe;
     }
 
-    public void setChefe(Chefe chefe) {
-        this.chefe = chefe;
+    public void setId_Chefe(int id_chefe) {
+        this.id_chefe = id_chefe;
     }
 
     public int getId() {

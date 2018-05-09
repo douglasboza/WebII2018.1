@@ -7,6 +7,7 @@ package main.java.beam;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import javax.ejb.Stateless;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import main.java.Chefe;
@@ -24,12 +25,12 @@ import main.java.Funcionario;
 
 public class DepartamentoBeam implements Serializable{
     private String nome;
-    private static int id=0;
+    private static int id = 0;
     private Departamento departamento = new Departamento();
     private static Database database = new Database();
     
     public DepartamentoBeam(){
-        this.id=this.id+1;
+        this.id = this.id+1;
         this.departamento.setId(this.id);
     }
     public String getNome() {
@@ -44,6 +45,7 @@ public class DepartamentoBeam implements Serializable{
 
   
     public ArrayList<Departamento> getLista_departamentos() {
+        System.out.println( database.getLista_departamentos() );
         return database.getLista_departamentos();
     }
     

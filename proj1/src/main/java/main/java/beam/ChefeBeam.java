@@ -5,6 +5,7 @@
  */
 package main.java.beam;
 
+import java.util.ArrayList;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import main.java.Chefe;
@@ -21,46 +22,42 @@ import main.java.Funcionario;
 @RequestScoped
 
 public class ChefeBeam {
-    private Chefe chefe = new Chefe();
-    private Funcionario fun = new Funcionario();
-    private String nome = "";
-    private double salario = 0;
-    private Departamento departamento = new Departamento();
     private static Database database = new Database();
-
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public double getSalario() {
-        return salario;
-    }
-
-    public void setSalario(double salario) {
-        this.salario = salario;
-    }
-
-    public Departamento getDepartamento() {
-        return departamento;
-    }
-
-    public void setDepartamento(Departamento departamento) {
-        this.departamento = departamento;
-        chefe.setDpto(departamento);
-    }
-
-    public static Database getDatabase() {
-        return database;
-    }
-
-    public static void setDatabase(Database database) {
-        ChefeBeam.database = database;
+    private Chefe chefe = new Chefe();
+    private int id_funcionario;
+    private int id_departamento;
+    private static int id = 0;
+    
+    public ChefeBeam(){
+        this.id = this.id+1;
+        this.chefe.setId(this.id);
     }
     
+    public int getId_funcionario() {
+        return id_funcionario;
+    }
+
+    public void setId_funcionario(int id_funcionario) {
+        this.id_funcionario = id_funcionario;
+        this.chefe.setId_funcionario(id_funcionario);
+    }
+
+    public int getId_departamento() {
+        return id_departamento;
+    }
+
+    public void setId_departamento(int id_departamento) {
+        this.id_departamento = id_departamento;
+        this.chefe.setId_departamento(id_departamento);
+        addDatabase();
+    }
     
+    public void addDatabase() {
+        this.database.setLista_chefes(this.chefe);
+    }
+    
+    public ArrayList<Chefe> getLista_chefes() {
+        return database.getLista_chefes();
+    }
+       
 }

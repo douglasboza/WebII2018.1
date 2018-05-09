@@ -23,7 +23,6 @@ public class EmployeeMB {
         
 	public List<Employee> getEmployeeList() {
                 employeeList = dao.findEmployees();
-                System.out.println( "teste okok" );
 		return employeeList;
 	}
 

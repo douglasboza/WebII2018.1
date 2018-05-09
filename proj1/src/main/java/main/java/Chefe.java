@@ -10,14 +10,37 @@ package main.java;
  * @author douglasboza
  */
 public class Chefe {
-    Departamento dpto;
+    int id;
+    int id_departamento;
+    int id_funcionario;
 
-    public Departamento getDpto() {
-        return dpto;
+    public int getId() {
+        return id;
     }
 
-    public void setDpto(Departamento dpto) {
-        this.dpto = dpto;
+    public void setId(int id) {
+        this.id = id;
     }
+    
+    
+        
+    public int getId_departamento() {
+        return id_departamento;
+    }
+
+    public void setId_departamento(int id_departamento) {
+        this.id_departamento = id_departamento;
+    }
+
+    public int getId_funcionario() {
+        return id_funcionario;
+    }
+
+    public void setId_funcionario(int id_funcionario) {
+        this.id_funcionario = id_funcionario;
+    }
+    
+
+    
     
 }

@@ -12,9 +12,10 @@ import main.java.Departamento;
 import main.java.Funcionario;
 
 /**
- *q
+ *
  * @author douglasboza
  */
+
 public class Database {
 
    private ArrayList<Funcionario> lista_funcionarios = new ArrayList();
@@ -40,6 +41,7 @@ public class Database {
     }
 
     public ArrayList<Chefe> getLista_chefes() {
+        System.out.println( getLista_departamentos() );
         return lista_chefes;
     }
 
