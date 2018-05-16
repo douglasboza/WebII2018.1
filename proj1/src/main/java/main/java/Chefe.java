@@ -5,23 +5,33 @@
  */
 package main.java;
 
+import javax.persistence.Entity;
+import javax.persistence.NamedQuery;
+import javax.persistence.PrimaryKeyJoinColumn;
+
 /**
  *
  * @author douglasboza
  */
-public class Chefe {
-    int id;
+
+@Entity
+@PrimaryKeyJoinColumn(name="id_funcionario")
+@NamedQuery(name = "findAllChefes", query = "select e from Chefe e")
+
+public class Chefe extends Funcionario{ 
+
+//    int id;
     int id_departamento;
-    int id_funcionario;
+//    int id_funcionario;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-    
+//    public int getId() {
+//        return id;
+//    }
+//
+//    public void setId(int id) {
+//        this.id = id;
+//    }
+//    
     
         
     public int getId_departamento() {
@@ -32,13 +42,13 @@ public class Chefe {
         this.id_departamento = id_departamento;
     }
 
-    public int getId_funcionario() {
-        return id_funcionario;
-    }
-
-    public void setId_funcionario(int id_funcionario) {
-        this.id_funcionario = id_funcionario;
-    }
+//    public int getId_funcionario() {
+//        return id_funcionario;
+//    }
+//
+//    public void setId_funcionario(int id_funcionario) {
+//        this.id_funcionario = id_funcionario;
+//    }
     
 
     

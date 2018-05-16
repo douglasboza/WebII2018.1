@@ -28,10 +28,10 @@ public class ChefeBeam {
     private int id_departamento;
     private static int id = 0;
     
-    public ChefeBeam(){
-        this.id = this.id+1;
-        this.chefe.setId(this.id);
-    }
+//    public ChefeBeam(){
+//        this.id = this.id+1;
+//        this.chefe.setId(this.id);
+//    }
     
     public int getId_funcionario() {
         return id_funcionario;
@@ -39,7 +39,7 @@ public class ChefeBeam {
 
     public void setId_funcionario(int id_funcionario) {
         this.id_funcionario = id_funcionario;
-        this.chefe.setId_funcionario(id_funcionario);
+//        this.chefe.setId_funcionario(id_funcionario);
     }
 
     public int getId_departamento() {

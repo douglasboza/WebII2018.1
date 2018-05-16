@@ -19,13 +19,18 @@
         <br/><br/>
         
         <h1>Departamentos cadastrados:</h1>
-       
-        <ui:repeat value="#{DepartamentoBeam.lista_departamentos}" var="item">
-            <p>id: #{item.id}</p>
-            <p>nome: #{item.nome}</p>
-            <br/>
-        </ui:repeat>
+        
+        <h:form>
+            <ui:repeat value="#{DepartamentoBeam.lista_departamentos}" var="item">
 
+                    <p>id: #{item.id_departamento}</p>
+                    <p>nome: #{item.nome}</p>
+                    <h:commandButton id="excluir" value="Remover" action="#{DepartamentoBeam.excluirDepartamento(item.id_departamento)}"></h:commandButton>
+                    <h:commandButton id="editar" value="Editar" action="#{DepartamentoBeam.editarDepartamento(item)}"></h:commandButton>
+
+                <br/>
+            </ui:repeat>
+        </h:form>
         
         <h:form>
             <p>Cadastro e edição de departamentos</p>  
@@ -36,10 +41,7 @@
             requiredMessage="Error: A name is required."
             maxlength="25" />
             <br></br>
-           
-
-
-            <h:commandButton id="submit" value="Submit" action="addDepartamento"></h:commandButton>
+            <h:commandButton id="submit" value="Submit" action="#{DepartamentoBeam.addDepartamento(DepartamentoBeam.departamento)}"></h:commandButton>
             <h:commandButton id="reset" value="Reset" type="reset"></h:commandButton>
         </h:form>
         

@@ -41,7 +41,7 @@
             <h:selectOneMenu 
                 id="Id_departamento"
                 value="#{FuncionarioBeam.id_departamento}"
-                required="true">
+                required="false">
                <f:selectItems 
                    value="#{DepartamentoBeam.lista_departamentos}"
                    var="item" 
@@ -50,7 +50,7 @@
             </h:selectOneMenu>
             
 
-            <h:commandButton id="submit" value="Submit" action="addFuncionario"></h:commandButton>
+            <h:commandButton id="submit" value="Submit" action="#{FuncionarioBeam.addFuncionario}"></h:commandButton>
             <h:commandButton id="reset" value="Reset" type="reset"></h:commandButton>
         </h:form>
         

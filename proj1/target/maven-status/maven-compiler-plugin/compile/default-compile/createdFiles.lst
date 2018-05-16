@@ -1,7 +1,12 @@
+main/java/DAO/FuncionarioDAO.class
+main/java/Funcionario_.class
 main/java/beam/ChefeBeam.class
-main/java/beam/DepartamentoBeam.class
 main/java/Funcionario.class
 main/java/Departamento.class
+main/java/Chefe_.class
+main/java/Chefe.class
+main/java/Departamento_.class
+main/java/beam/DepartamentoBeam.class
+main/java/DAO/DepartamentoDAO.class
 main/java/beam/FuncionarioBeam.class
 main/java/DAO/Database.class
-main/java/Chefe.class

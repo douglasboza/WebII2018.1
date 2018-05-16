@@ -5,17 +5,32 @@
  */
 package main.java;
 
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.NamedQuery;
+
 /**
  *
  * @author douglasboza
  */
 
-public class Departamento {
+
+@Entity
+@Inheritance(strategy = InheritanceType.JOINED)
+@NamedQuery(name = "findAllDepartamentos", query = "SELECT e FROM Departamento e")
+
+
+public class Departamento implements Serializable{
     String nome;
-    int id_chefe;
-    int id;
     
-    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id_departamento;
     
     public String getNome() {
         return nome;
@@ -25,20 +40,14 @@ public class Departamento {
         this.nome = nome;
     }
 
-    public int getChefe() {
-        return id_chefe;
+    public Long getId_departamento() {
+        return id_departamento;
     }
 
-    public void setId_Chefe(int id_chefe) {
-        this.id_chefe = id_chefe;
+    public void setId_departamento(Long id_departamento) {
+        this.id_departamento = id_departamento;
     }
+    
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
     
 }

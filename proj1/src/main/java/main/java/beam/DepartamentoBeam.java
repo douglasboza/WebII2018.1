@@ -7,13 +7,13 @@ package main.java.beam;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
-import main.java.Chefe;
-import main.java.DAO.Database;
+import main.java.DAO.DepartamentoDAO;
 import main.java.Departamento;
-import main.java.Funcionario;
 
 /**
  *
@@ -24,30 +24,64 @@ import main.java.Funcionario;
 @RequestScoped
 
 public class DepartamentoBeam implements Serializable{
-    private String nome;
-    private static int id = 0;
-    private Departamento departamento = new Departamento();
-    private static Database database = new Database();
+    @Inject DepartamentoDAO departamentodao;
     
-    public DepartamentoBeam(){
-        this.id = this.id+1;
-        this.departamento.setId(this.id);
-    }
+    private String nome;
+    private Departamento departamento = new Departamento();
+    private List<Departamento> departamentoList = new ArrayList<>();
+   
+   
     public String getNome() {
         return nome;
     }
 
     public void setNome(String nome) {
+                System.out.print("aquii213");
+
         this.nome = nome;
         departamento.setNome(nome);
-        database.setLista_departamentos(departamento);
     }
 
   
-    public ArrayList<Departamento> getLista_departamentos() {
-        System.out.println( database.getLista_departamentos() );
-        return database.getLista_departamentos();
+    public List<Departamento> getLista_departamentos() {
+        this.departamentoList = departamentodao.findDepartamento();
+        
+        return departamentoList;
     }
+    
+    public void excluirDepartamento(int id_rem1){
+        Long id_rem = Long.valueOf(id_rem1);
+       departamentodao.removerDepartamento(id_rem);
+    }
+    
+    public void editarDepartamento(Departamento departamento){
+        this.setDepartamento(departamento);
+        this.setNome(departamento.getNome());
+        System.out.println("igual aaaa " +departamento);
+//      
+    }   
+    
+    public void addDepartamento(Departamento dep_editar) {
+        if(dep_editar != null){
+            departamentodao.editarDepartamento(departamento);
+        }else{
+            departamentodao.addNew(this.departamento);
+        }
+      
+    }
+    
+    
+
+    public Departamento getDepartamento() {
+        return departamento;
+    }
+
+    
+    public void setDepartamento(Departamento departamento) {
+        this.setNome(departamento.getNome());
+        this.departamento = departamento;
+    }
+  
     
     
     

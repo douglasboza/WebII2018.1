@@ -1,4 +1,4 @@
-package employee.presentation;
+package projeto.presentation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,8 +7,8 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import employee.Employee;
-import employee.data.EmployeeDAO;
+import projeto.dominio.Employee;
+import projeto.data.EmployeeDAO;
 
 @Named(value = "employeeManagedBean")
 @RequestScoped

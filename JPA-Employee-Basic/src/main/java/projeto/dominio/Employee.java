@@ -1,4 +1,4 @@
-package employee;
+package projeto.dominio;
 
 import java.util.Date;
 
